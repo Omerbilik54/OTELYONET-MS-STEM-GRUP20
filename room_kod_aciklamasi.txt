@@ -1,0 +1,12 @@
+Kod Açıklaması:
+FR-- functional Requirement,
+Değişkenler: UML diyagramındaki odaId, tip, kapasite, fiyat ve durum değişkenleri private olarak tanımlandı. Bu, veri kapsülleme (encapsulation) ilkesine uygundur.
+
+setStatus Metodu: Diyagramda belirtildiği gibi odanın durumunu ("DOLU", "BOŞ", "REZERVE") değiştirmek için kullanılır. Check-in işlemi sırasında durum "DOLU" , Check-out sırasında "BOŞ"  yapılır.
+
+toFileString Metodu: Proje gereksinimlerinde verilerin TXT dosyalarında saklanacağı belirtilmiştir. Bu metot, nesne özelliklerini dosya formatına (örneğin virgülle ayrılmış değerler) dönüştürür.
+
+
+Ek Getter Metotları: UML diyagramında açıkça görünmese de, UC2 - Oda Listele senaryosunda odanın fiyatını ve tipini ekrana yazdırmak için getFiyat() ve getTip() gibi metotlara ihtiyaç vardır. Bu nedenle bunlar da eklenmiştir.
+
+

@@ -1,0 +1,28 @@
+Kodun İşlevleri ve Gereksinim Uyumu
+Tarih Çakışma Kontrolü (isDateAvailable):
+
+
+FR3.3 ve FR5.3 (Güvenilirlik):. Mevcut tüm rezervasyonları tarar ve istenen tarihlerle çakışıp çakışmadığını kontrol eder. Çakışma varsa false döner ve rezervasyonu engeller.
+
+
+Check-in Mantığı (checkIn):
+
+
+FR4.1:. İşlem başarılı olduğunda odanın durumunu DOLU yapar ve dosyayı günceller.
+
+
+Doğrulama: Giriş tarihinin "bugün" olup olmadığını (LocalDate.now()) kontrol eder.
+
+Check-out Mantığı (checkOut):
+
+
+FR4.2:. İşlem başarılı olduğunda odanın durumunu BOŞ yapar.
+
+
+FR4.3: Rezervasyon durumunu TAMAMLANDI olarak işaretler.
+
+Dosya Güncelleme:
+
+FileManager sınıfına eklediğimiz updateAllRooms ve updateAllReservations metotlarını kullanarak, RAM üzerindeki değişiklikleri (Oda durumu: Dolu/Boş) kalıcı olarak TXT dosyalarına yazar.
+
+Bu sınıf ile birlikte Otel Yönetim Sistemi'nin tüm Java sınıfları (Room, Customer, Reservation, FileManager, MenuController ve ReservationService) tamamlanmış olur
