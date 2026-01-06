@@ -17,7 +17,11 @@ public class ReservationService{
     // UC5 - Rezervasyon Yap
     public void createReservation(int musteriId, int odaId, LocalDate giris, LocalDate cikis) {
         // 1. Tarih Geçerlilik Kontrolü
+<<<<<<< HEAD
         if (giris.isAfter(cikis) || giris.isEqual(cikis) || giris.isBefore(LocalDate.now())) {
+=======
+        if (giris.isAfter(cikis) || giris.isEqual(cikis) ||/* giris.isBefore(LocalDate.now())*/) {// Bu değişiklik sayesinde sisteme "Giriş: 2023-01-01" gibi eski bir tarih girseniz bile sistem kabul edecektir.
+>>>>>>> aeb9ea05ed501d29fc2eca5e9539c65bfcc95f4f
             System.out.println("Hata: Tarihler geçersiz. Giriş tarihi bugünden önce olamaz ve çıkış tarihinden önce olmalıdır.");
             return;
         }
@@ -89,11 +93,21 @@ public class ReservationService{
         }
 
         // Tarih Kontrolü (Bugün giriş günü mü?)
+<<<<<<< HEAD
         if (!rez.getGirisTarihi().equals(LocalDate.now())) {
             System.out.println("Hata: Giriş tarihi bugün değil (" + rez.getGirisTarihi() + ").");
             return;
         }
 
+=======
+     //   if (!rez.getGirisTarihi().equals(LocalDate.now())) {
+    //        System.out.println("Hata: Giriş tarihi bugün değil (" + rez.getGirisTarihi() + ").");
+    //        return;
+     //   }
+/* 
+ * Bu değişiklik sayesinde, giriş tarihi geçen hafta olan bir rezervasyon için bile "Check-in" diyerek odayı anında "DOLU" yapariz.
+ * */
+>>>>>>> aeb9ea05ed501d29fc2eca5e9539c65bfcc95f4f
         // Oda Durumu Kontrolü
         Room oda = odalar.stream().filter(r -> r.getRoomId() == rez.getOdaId()).findFirst().orElse(null);
         if (oda != null && !oda.getStatus().equals("BOŞ")) {
