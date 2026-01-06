@@ -1,0 +1,4 @@
+1,double,2,1000.0,BOŞ
+2,Double,4,1000.0,BOŞ
+3,Double,5,3000.0,BOŞ
+4,single,1,2000.0,BOŞ
