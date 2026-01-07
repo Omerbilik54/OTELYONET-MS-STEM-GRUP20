@@ -1,0 +1,17 @@
+ Açıklama:
+Değişkenler: UML diyagramındaki musteriId (int), ad (String), soyad (String) ve telefon (String) alanları private olarak tanımlanmıştır.
+
+getCustomerId: Diyagramdaki +getCustomerId() metodu. Diğer sınıfların (örneğin Rezervasyon işlemi sırasında) müşteri kimliğini doğrulaması için kullanılır.
+
+
+toFileString: Analiz raporunda belirtilen "veriler TXT dosyalarında saklanacaktır"  kuralına uygun olarak, nesneyi dosyaya yazılabilir bir String formatına (virgülle ayrılmış) dönüştürür.
+
+
+Ek Getter Metotları: UML kutusunda sadece getCustomerId görünse de, UC4 - Müşteri Listele  senaryosunda müşterinin adını ve telefonunu ekrana yazdırmak gerektiğinden getAd, getSoyad ve getTelefon metotları eklenmişti
+
+UML Sapması ve Nedeni:
+    Tasarım raporundaki UML diyagramında getAd() veya getTelefon() yoktu.
+
+Enkapsülasyon:
+    Müşteri ID'si rezervasyonlarda "Foreign Key" (Yabancı Anahtar) gibi davranır.
+        Bu yüzden getCustomerId metodu diğer sınıflar için kritiktir.

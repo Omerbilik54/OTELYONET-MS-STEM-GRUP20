@@ -1,0 +1,4 @@
+101,Double,3,1300.0,DOLU
+102,Single,1,900.0,DOLU
+103,Double ,4,3500.0,BOŞ
+104,Single,2,750.0,BOŞ
