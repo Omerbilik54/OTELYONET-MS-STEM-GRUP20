@@ -26,3 +26,9 @@ Dosya Güncelleme:
 FileManager sınıfına eklediğimiz updateAllRooms ve updateAllReservations metotlarını kullanarak, RAM üzerindeki değişiklikleri (Oda durumu: Dolu/Boş) kalıcı olarak TXT dosyalarına yazar.
 
 Bu sınıf ile birlikte Otel Yönetim Sistemi'nin tüm Java sınıfları (Room, Customer, Reservation, FileManager, MenuController ve ReservationService) tamamlanmış olur
+
+1.Demo İçin Yapılan Değişiklik:
+        -Kodda checkIn metodunda tarih kontrolü (rez.getGirisTarihi().equals(LocalDate.now())) yoruma alınmıştır.
+2.İş Mantığı Katmanı (Business Layer):
+  -MenuController hesaplama yapmaz, sadece createReservation çağırır.
+     Tüm mantık (Çakışma var mı? Tarih doğru mu?) bu sınıftadır.
