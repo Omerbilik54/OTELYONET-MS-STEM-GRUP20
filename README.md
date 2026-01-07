@@ -2,12 +2,6 @@
 
 ![Java](https://img.shields.io/badge/Java-17%2B-orange?style=for-the-badge&logo=java) ![Architecture](https://img.shields.io/badge/Architecture-Layered-blueviolet?style=for-the-badge) ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-### 📊 Project Statistics
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Omerbilik54&layout=compact&theme=dracula)
-
-![Repo Cards](https://github-readme-stats.vercel.app/api/pin/?username=Omerbilik54&repo=OTELYONET-MS-STEM-GRUP20&theme=dracula)
-
 > **"No more spaghetti code."**
 
 Bir otelin günlük operasyonlarını (Reservation, Check-in/Out, Room Management) **Komut Satırı (CLI)** üzerinden yöneten, **Nesne Yönelimli (OOP)** ve **Katmanlı Mimari** ile geliştirilmiş "rock-solid" bir otomasyon projesi.
