@@ -10,3 +10,16 @@ toFileString Metodu: Proje gereksinimlerinde verilerin TXT dosyalarında saklana
 Ek Getter Metotları: UML diyagramında açıkça görünmese de, UC2 - Oda Listele senaryosunda odanın fiyatını ve tipini ekrana yazdırmak için getFiyat() ve getTip() gibi metotlara ihtiyaç vardır. Bu nedenle bunlar da eklenmiştir.
 
 
+1.Constructor Overloading:
+
+Kodda iki tane "Room" kurucu metodu var.
+
+    i)Yeni oda eklerken (UC1) kullanılır, durumu otomatik "BOŞ" yapar.
+
+    ii)Dosyadan okurken kullanılır, dosyadaki eski durumu (örn: DOLU) korur.
+
+2.Rapor Uyumu:
+
+    i)Analiz Raporu FR1.3 (Oda durumları tutulmalıdır) -> private String durum;
+
+    ii)Tasarım Raporu 4.1 (Room Sınıfı) -> setStatus() metodu.

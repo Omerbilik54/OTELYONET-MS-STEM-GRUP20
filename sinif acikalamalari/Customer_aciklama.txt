@@ -8,3 +8,10 @@ toFileString: Analiz raporunda belirtilen "veriler TXT dosyalarında saklanacakt
 
 
 Ek Getter Metotları: UML kutusunda sadece getCustomerId görünse de, UC4 - Müşteri Listele  senaryosunda müşterinin adını ve telefonunu ekrana yazdırmak gerektiğinden getAd, getSoyad ve getTelefon metotları eklenmişti
+
+UML Sapması ve Nedeni:
+    Tasarım raporundaki UML diyagramında getAd() veya getTelefon() yoktu.
+
+Enkapsülasyon:
+    Müşteri ID'si rezervasyonlarda "Foreign Key" (Yabancı Anahtar) gibi davranır.
+        Bu yüzden getCustomerId metodu diğer sınıflar için kritiktir.

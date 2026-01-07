@@ -1,0 +1,11 @@
+Kod Açıklaması:
+Dosya Yolları: rooms.txt, customers.txt ve reservations.txt değişkenleri tanımlanmıştır.
+
+read... Metotları: BufferedReader kullanarak satır satır okuma yapar. Her satırı virgül (,) ile parçalar (split) ve ilgili sınıfın (Room, Customer, Reservation) nesnesine dönüştürerek listeye ekler.
+
+write... Metotları: FileWriter(..., true) parametresi kullanılarak dosyayı Append (Ekleme) modunda açar. Bu sayede yeni kayıtlar dosyanın sonuna eklenir, eski veriler silinmez.
+
+generateId: Dosyayı baştan sona okuyarak en büyük ID'yi bulur ve bir fazlasını döndürür. Bu, benzersiz ID oluşturmak (Auto Increment) için kullanılır.
+
+
+Güncelleme Metotları (updateAll...): UML diyagramında açıkça görünmese de, analiz raporundaki Check-in (Oda durumunu 'Dolu' yap) ve Check-out (Oda durumunu 'Boş' yap)  gereksinimlerinin çalışabilmesi için dosyanın üzerine yazılması gerekir. Bu yüzden listeyi alıp dosyayı tamamen yeniden yazan yardımcı metotlar eklenmiştir.

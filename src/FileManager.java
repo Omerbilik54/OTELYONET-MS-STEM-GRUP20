@@ -32,7 +32,7 @@ public class FileManager {
                     if (data.length >= 5) {
                         int id = Integer.parseInt(data[0]);
                         String tip = data[1];
-                        int kap = Integer.parseInt(data[2]);
+                        int kap = Integer.parseInt(data[2]);// kap->kapasite
                         double fiyat = Double.parseDouble(data[3]);
                         String durum = data[4];
 
@@ -134,6 +134,7 @@ public class FileManager {
         // UC5 - Yeni rezervasyon ekler
         public void writeReservation(Reservation rez) {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(rezervasyonDosyasi, true))) {
+                //true->her yeni kayıt eklediğinde eski kayıtların hepsi silinir!
                 bw.write(rez.toFileString());
                 bw.newLine();
             } catch (IOException e) {
@@ -141,15 +142,20 @@ public class FileManager {
             }
         }
 
-        // --- YARDIMCI METOTLAR ---
+
 
         // +generateId(dosyaYolu : String) : int
-        // Otomatik artan ID üretir (UC1, UC3, UC5 için gereklidir)
+        // Otomatik artan(Auto-Increment) ID üretir (UC1, UC3, UC5 için gereklidir)
         public int generateId(String dosyaYolu) {
             int maxId = 0;
             File file = new File(dosyaYolu);
+            if (dosyaYolu.equals(odaDosyasi)) {
+                maxId = 100;// Odalar 101, 102...
+            }else if(dosyaYolu.equals(rezervasyonDosyasi ) ){
+                maxId = 5000;// Rezervasyonlar 5001, 5002...
+            }
 
-            if (!file.exists()) return 1; // Dosya yoksa ilk ID 1 olsun
+            if (!file.exists()) return maxId +1; // Dosya henüz yoksa; oda için 101, diğerleri için 1 döner
 
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
@@ -162,12 +168,12 @@ public class FileManager {
                                 maxId = currentId;
                             }
                         } catch (NumberFormatException e) {
-                            // Header veya bozuk satır varsa atla
+                            // Header veya bozuk satır varsa atla, yani hata varsa atla
                         }
                     }
                 }
             } catch (IOException e) {
-                return 1;
+                return maxId +1;
             }
             return maxId + 1;
         }
@@ -180,7 +186,7 @@ public class FileManager {
         public void updateAllRooms(List<Room> odalar) {
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(odaDosyasi, false))) { // false = overwrite
                 for (Room oda : odalar) {
-                    bw.write(oda.toFileString());
+                    bw.write(oda.toFileString());//liste bastan sona tekarar yaz
                     bw.newLine();
                 }
             } catch (IOException e) {
