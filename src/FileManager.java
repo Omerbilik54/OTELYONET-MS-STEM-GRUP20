@@ -148,8 +148,13 @@ public class FileManager {
         public int generateId(String dosyaYolu) {
             int maxId = 0;
             File file = new File(dosyaYolu);
+            if (dosyaYolu.equals(odaDosyasi)) {
+                maxId = 100;// Odalar 101, 102...
+            }else if(dosyaYolu.equals(rezervasyonDosyasi ) ){
+                maxId = 5000;// Rezervasyonlar 5001, 5002...
+            }
 
-            if (!file.exists()) return 1; // Dosya yoksa ilk ID 1 olsun
+            if (!file.exists()) return maxId +1; // Dosya henüz yoksa; oda için 101, diğerleri için 1 döner
 
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
                 String line;
@@ -162,12 +167,12 @@ public class FileManager {
                                 maxId = currentId;
                             }
                         } catch (NumberFormatException e) {
-                            // Header veya bozuk satır varsa atla
+                            // Header veya bozuk satır varsa atla, yani hata varsa atla
                         }
                     }
                 }
             } catch (IOException e) {
-                return 1;
+                return maxId +1;
             }
             return maxId + 1;
         }
