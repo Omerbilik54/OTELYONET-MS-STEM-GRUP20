@@ -52,6 +52,9 @@ public class Reservation {
     // Verileri reservations.txt dosyasına yazmak için CSV formatına çevirir.
     public String toFileString() {
         // Örnek: 1001,101,201,2023-10-01,2023-10-05,2000.0,REZERVE
+    }
+
+
 //        return "1.Reservation:"+rezervasyonId + "," + "MusteriId:"+musteriId + ","+"OdaId:" + odaId + "," +
 //               "\n"+"girisTarihi:"+girisTarihi + ","+"cikisTarih:" + cikisTarihi +","+"\n"+ "toplamUcreti:"+","  + toplamUcret + "durum:"+ "," + durum;
 //    }
