@@ -17,7 +17,7 @@ public class ReservationService{
     // UC5 - Rezervasyon Yap
     public void createReservation(int musteriId, int odaId, LocalDate giris, LocalDate cikis) {
         // 1. Tarih Geçerlilik Kontrolü
-        if (giris.isAfter(cikis) || giris.isEqual(cikis) || giris.isBefore(LocalDate.now())) {
+        if (giris.isAfter(cikis) || giris.isEqual(cikis) /*|| giris.isBefore(LocalDate.now())*/) {
             System.out.println("Hata: Tarihler geçersiz. Giriş tarihi bugünden önce olamaz ve çıkış tarihinden önce olmalıdır.");
             return;
         }
@@ -88,11 +88,11 @@ public class ReservationService{
             return;
         }
 
-        // Tarih Kontrolü (Bugün giriş günü mü?)
-        if (!rez.getGirisTarihi().equals(LocalDate.now())) {
-            System.out.println("Hata: Giriş tarihi bugün değil (" + rez.getGirisTarihi() + ").");
-            return;
-        }
+//        // Tarih Kontrolü (Bugün giriş günü mü?)
+//        if (!rez.getGirisTarihi().equals(LocalDate.now())) {
+//            System.out.println("Hata: Giriş tarihi bugün değil (" + rez.getGirisTarihi() + ").");
+//            return;
+//        }
 
         // Oda Durumu Kontrolü
         Room oda = odalar.stream().filter(r -> r.getRoomId() == rez.getOdaId()).findFirst().orElse(null);
