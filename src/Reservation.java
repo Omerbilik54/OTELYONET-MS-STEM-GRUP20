@@ -52,10 +52,19 @@ public class Reservation {
     // Verileri reservations.txt dosyasına yazmak için CSV formatına çevirir.
     public String toFileString() {
         // Örnek: 1001,101,201,2023-10-01,2023-10-05,2000.0,REZERVE
-        return "1.Reservation:"+rezervasyonId + "," + "MusteriId:"+musteriId + ","+"OdaId:" + odaId + "," +
-               "\n"+"girisTarihi:"+girisTarihi + ","+"cikisTarih:" + cikisTarihi +","+"\n"+ "toplamUcreti:"+","  + toplamUcret + "durum:"+ "," + durum;
-    }
-
+//        return "1.Reservation:"+rezervasyonId + "," + "MusteriId:"+musteriId + ","+"OdaId:" + odaId + "," +
+//               "\n"+"girisTarihi:"+girisTarihi + ","+"cikisTarih:" + cikisTarihi +","+"\n"+ "toplamUcreti:"+","  + toplamUcret + "durum:"+ "," + durum;
+//    }
+// Bu metot verileri dosyaya "1,1,1,2025-12-24..." formatında yazar.
+       // public String toFileString() {
+            return rezervasyonId + "," +
+                    musteriId + "," +
+                    odaId + "," +
+                    girisTarihi + "," +
+                    cikisTarihi + "," +
+                    toplamUcret + "," +
+                    durum;
+        }
     // --- Getter ve Setter Metotları ---
     // (Check-in, Check-out ve Listeleme işlemleri için gereklidir)
 
