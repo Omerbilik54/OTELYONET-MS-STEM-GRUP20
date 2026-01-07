@@ -10,3 +10,10 @@ Hata Yönetimi: Kullanıcının sayı yerine harf girmesi (try-catch NumberForma
 Bağımlılıklar: FileManager ve ReservationService nesneleri Constructor içinde başlatılarak UML diyagramındaki "Uses" ilişkisi kurulmuştur.
 
 İşlevsellik: 1'den 9'a kadar olan tüm Use Case'leri (Oda eklemeden Çıkışa kadar) kapsayan mantık blokları ilgili metotlara dağıtılmıştır.
+
+Katmanlı Mimari (Presentation Layer):
+       -Bu sınıfın görevi sadece kullanıcıdan veri almaktır.
+       -Fiyat hesaplaması veya dosya yazma işlemi yapmaz (Separation of Concerns). Bu işleri Service ve FileManager'a devreder.
+
+Scanner Kullanımı:
+    -Scanner nesnesinin close() metodu sadece program bitince (döngüden çıkınca) çağrılır. Bu sayede bellek sızıntısı önlenir.

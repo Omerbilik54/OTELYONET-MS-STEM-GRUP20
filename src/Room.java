@@ -38,7 +38,7 @@ public class Room {
     }
 
     // +setStatus(durum : String)
-    // Check-in (FR4.1) ve Check-out (FR4.2) işlemlerinde durumu güncellemek için kullanılır[cite: 26, 27].
+    // Check-in (FR4.1) ve Check-out (FR4.2) işlemlerinde durumu güncellemek için kullanılır
     public void setStatus(String durum) {
         this.durum = durum;
     }

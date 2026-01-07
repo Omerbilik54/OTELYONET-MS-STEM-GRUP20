@@ -17,8 +17,8 @@ public class ReservationService{
     // UC5 - Rezervasyon Yap
     public void createReservation(int musteriId, int odaId, LocalDate giris, LocalDate cikis) {
         // 1. Tarih Geçerlilik Kontrolü
-        if (giris.isAfter(cikis) || giris.isEqual(cikis) /*|| giris.isBefore(LocalDate.now())*/) {
-        if (giris.isAfter(cikis) || giris.isEqual(cikis) ||/* giris.isBefore(LocalDate.now())*/) {// Bu değişiklik sayesinde sisteme "Giriş: 2023-01-01" gibi eski bir tarih girseniz bile sistem kabul edecektir.
+       // if (giris.isAfter(cikis) || giris.isEqual(cikis) /*|| giris.isBefore(LocalDate.now())*/) {//sunum icin
+        if (giris.isAfter(cikis) || giris.isEqual(cikis) /*|| giris.isBefore(LocalDate.now())*/) {// Bu değişiklik sayesinde sisteme "Giriş: 2023-01-01" gibi eski bir tarih girseniz bile sistem kabul edecektir.
             System.out.println("Hata: Tarihler geçersiz. Giriş tarihi bugünden önce olamaz ve çıkış tarihinden önce olmalıdır.");
             return;
         }
