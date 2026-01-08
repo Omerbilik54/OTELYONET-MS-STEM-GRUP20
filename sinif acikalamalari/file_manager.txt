@@ -8,4 +8,15 @@ write... Metotları: FileWriter(..., true) parametresi kullanılarak dosyayı Ap
 generateId: Dosyayı baştan sona okuyarak en büyük ID'yi bulur ve bir fazlasını döndürür. Bu, benzersiz ID oluşturmak (Auto Increment) için kullanılır.
 
 
-Güncelleme Metotları (updateAll...): UML diyagramında açıkça görünmese de, analiz raporundaki Check-in (Oda durumunu 'Dolu' yap) ve Check-out (Oda durumunu 'Boş' yap)  gereksinimlerinin çalışabilmesi için dosyanın üzerine yazılması gerekir. Bu yüzden listeyi alıp dosyayı tamamen yeniden yazan yardımcı metotlar eklenmiştir.
+Güncelleme Metotları (updateAll...):  analiz raporundaki Check-in (Oda durumunu 'Dolu' yap) ve Check-out (Oda durumunu 'Boş' yap)  gereksinimlerinin çalışabilmesi için dosyanın üzerine yazılması gerekir.
+    Bu yüzden listeyi alıp dosyayı tamamen yeniden yazan yardımcı metotlar eklenmiştir.
+
+
+Performans Kısıtı (Trade-off):
+    -updateAllRooms metodunda new FileWriter(..., false) kullanıyoruz.
+    false parametresi dosyanın içini tamamen siler ve baştan yazar (Overwrite).
+    -Büyük verilerde bu işlem yavaştır ama TXT dosyasında satır güncellemek zor olduğu için bu yöntemi seçtik.
+
+Merkezi Yönetim:
+        -Dosya isimleri (rooms.txt vb.) sadece bu sınıfta tanımlıdır.
+            Eğer dosya adını değiştirmek istersek sadece burayı değiştiririz (Bakım Kolaylığı).
